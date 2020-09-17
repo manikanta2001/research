@@ -103,6 +103,13 @@ function func1() {
 app.get("/",function(req,res){
   res.render("login");
 });
+app.get("/admin",function(req,res){
+  res.render("admin");
+});
+app.get("/remove",function(req,res){
+  res.render("remove");
+});
+
 
 app.get("/register",function(req,res){
   res.render("register");
@@ -274,5 +281,34 @@ User.findById(req.user._id,function(err,Founduser){
     }
     }
   }
+});
+});
+app.post("/admin",function(req,res){
+User.findOne({"displayName":req.body.displayname},function(err,founduser){
+ if(err){
+   console.log(err);
+ }
+else{
+  if(founduser){
+    res.render("proff",{user:founduser});
+  }
+  else{
+    console.log("user not found");
+    res.redirect("/admin");
+  }
+}
+});
+});
+app.post("/remove",function(req,res){
+User.deleteOne({"displayName":req.body.display},function(err,founduser){
+if(err){
+  console.log(err);
+}
+else{
+  if(founduser){
+    console.log("sucssesfully deleted");
+    res.redirect("/admin");
+  }
+}
 });
 });

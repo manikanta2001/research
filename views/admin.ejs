@@ -31,7 +31,7 @@
       href="node_modules/bootstrap-social/bootstrap-social.css"
     />
 
-    <link rel="stylesheet" type="text/css" href="public/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
   </head>
 
   <body>
@@ -50,7 +50,7 @@
 
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark font-italic bg-light">
+        <a href="/user" class="nav-link text-dark font-italic bg-light">
                   <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                   Home
               </a>
@@ -62,13 +62,13 @@
               </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark font-italic">
+        <a href="/remove" class="nav-link text-dark font-italic">
                   <i class="fa fa-times mr-3 text-primary fa-fw"></i>
                   Remove
               </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark font-italic">
+        <a href="/" class="nav-link text-dark font-italic">
                   <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
                   Logout
               </a>
@@ -110,12 +110,13 @@
 
     <h4 style="padding-left: 80px;padding-top: 100px;color: green;"><----------ENTER DISPLAY NAME OF USER TO GET DETAILS----------></h4>
 
-    <form class="form-inline" style = "padding-top:50px;padding-left: 150px;">
+    <form class="form-inline" style = "padding-top:50px;padding-left: 150px;"  action="/admin" method="post">
         <input
             class="form-control mr-sm-1"
             type="search"
             placeholder="Mohammed Ahmed Khan...."
             aria-label="Search"
+            name="displayname"
             style="width:550px;height: 50px;"
             not req
         />
@@ -131,6 +132,7 @@
 
 
   </div>
+
   <!-- End demo content -->
 
 
